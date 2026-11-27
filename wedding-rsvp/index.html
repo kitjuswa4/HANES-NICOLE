@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nicole &amp; Hanes – Wedding Invitation</title>
+<meta name="description" content="You are invited to the wedding of Nicole and Hanes. January 10, 2027.">
+<meta property="og:title" content="Nicole &amp; Hanes – Wedding Invitation">
+<meta property="og:description" content="You are invited! Tap to open our invitation.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#452C1F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta name="robots" content="noindex, nofollow">
+<noscript><style>.intro{display:none}#invitation{visibility:visible;opacity:1}body.locked{overflow:auto}.save .num{opacity:1}</style></noscript>
+</head>
+<body class="locked">
+
+<!--
+  ===========================  HOW THIS FOLDER IS ORGANIZED  ===========================
+  index.html   the PAGE: every section of the invitation, in order (this file)
+  style.css    the LOOK: colors, fonts, spacing, animations
+  config.js    YOUR DETAILS: names, date, venues, map links, RSVP deadline, entourage
+  script.js    the BEHAVIOR: fills in text, QR codes, intro, countdown, RSVP form
+  assets/      the pictures: church sketch, Catalina logo, embossed flowers, favicon
+               (optional: photo.jpg for the couple, attire-*.png for outfit pictures)
+  Full guide: see WEDDING-SITE-GUIDE.md
+  ======================================================================================
+-->
+
+
+
+
+<!-- =================== ENVELOPE INTRO =================== -->
+<div class="intro" id="intro">
+  <div class="emb e-tl" aria-hidden="true"></div>
+  <div class="emb e-br" aria-hidden="true"></div>
+  <div class="intro-text">
+    <p class="intro-title">You are invited!</p>
+    <p class="intro-date" id="introDate">01 . 10 . 27</p>
+  </div>
+
+  <button class="envelope" id="envelope" type="button" aria-label="Open the invitation">
+    <span class="env-back"></span>
+    <span class="env-front"></span>
+    <span class="flap">
+      <svg viewBox="0 0 300 131" preserveAspectRatio="none" aria-hidden="true">
+        <defs><linearGradient id="fg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F3E8D2"/><stop offset="1" stop-color="#E4D3B0"/></linearGradient></defs>
+        <path d="M0 0H300L150 131Z" fill="url(#fg)"/>
+        <path d="M0 0L150 131L300 0" fill="none" stroke="rgba(90,60,40,.18)" stroke-width="1.5"/>
+      </svg>
+    </span>
+    <span class="seal" aria-hidden="true">N&amp;H</span>
+    <svg class="lily" viewBox="0 0 160 110" aria-hidden="true">
+      <path d="M6 98C50 102 92 88 128 70" stroke="#7A9560" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M22 102C56 108 86 100 112 92" stroke="#7A9560" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <g transform="translate(128 70) rotate(-35)">
+        <path d="M0 0C-18-6-24-34-4-56 4-44 22-30 18-10 16-2 8 2 0 0Z" fill="#FBF8F0" stroke="#BFAE8C"/>
+        <path d="M-1-8C-2-24 0-34 3-42" stroke="#E3BE55" stroke-width="5" stroke-linecap="round" fill="none"/>
+      </g>
+      <g transform="translate(112 92) rotate(-8) scale(.82)">
+        <path d="M0 0C-18-6-24-34-4-56 4-44 22-30 18-10 16-2 8 2 0 0Z" fill="#FBF8F0" stroke="#BFAE8C"/>
+        <path d="M-1-8C-2-24 0-34 3-42" stroke="#E3BE55" stroke-width="5" stroke-linecap="round" fill="none"/>
+      </g>
+    </svg>
+  </button>
+  <p class="intro-hint"><span>Tap to open</span></p>
+</div>
+
+<!-- =================== INVITATION =================== -->
+<main id="invitation" tabindex="-1">
+<div class="page">
+
+  <!-- SAVE THE DATE -->
+  <section class="sec dark save" id="save">
+    <div class="emb e-tl" aria-hidden="true"></div>
+    <div class="emb e-br" aria-hidden="true"></div>
+    <p class="eyebrow"><span data-cfg="bride">Nicole</span> + <span data-cfg="groom">Hanes</span></p>
+    <div class="stack" aria-label="Save the date">
+      <span class="num n1" id="sdM">01</span>
+      <span class="num n2" id="sdD">10</span>
+      <span class="num n3" id="sdY">27</span>
+      <span class="std">SAVE THE<br>DATE</span>
+    </div>
+    <p class="eyebrow" data-cfg="cityUpper">SAN JOSE DEL MONTE, BULACAN</p>
+  </section>
+
+  <!-- THE INVITATION -->
+  <section class="sec light" id="invite">
+    <svg class="mono" viewBox="0 0 100 124" aria-hidden="true">
+      <ellipse cx="50" cy="62" rx="46" ry="58" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <ellipse cx="50" cy="62" rx="41" ry="53" fill="none" stroke="currentColor" stroke-width=".8"/>
+      <g id="monoG" fill="currentColor" font-size="46" style="font-family:var(--display)">
+        <text x="27" y="70">N</text>
+        <text x="50" y="84">H</text>
+      </g>
+    </svg>
+    <p class="intro-lines">Together with their families,<br><br>we invite you to<br>join the wedding of</p>
+    <h1 class="names"><span data-cfg="bride">Nicole</span><br><span class="amp" aria-hidden="true">&amp;</span><span data-cfg="groom">Hanes</span></h1>
+    <p class="when">On <span data-cfg="dateLine">Sunday, the 10th of January 2027</span>
+      <small data-cfg="ceremonyTimeLine">2:30 in the afternoon</small></p>
+    <p class="where"><b>Ceremony</b><span data-cfg="ceremonyName">Capilla de Sta. Rita de Cascia</span></p>
+    <p class="where"><b>Reception</b><span data-cfg="receptionName">Catalina Events Place Rental</span></p>
+  </section>
+
+  <!-- ENTOURAGE (edit the names in the ENTOURAGE list at the bottom of this file) -->
+  <section class="sec dark ent" id="entourage">
+    <p class="top"><span data-cfg="bride">Nicole</span> – <span data-cfg="groom">Hanes</span></p>
+    <h2>Entourage</h2>
+    <div id="entourageBody"></div>
+  </section>
+
+  <!-- COUNTDOWN + PHOTO -->
+  <section class="sec light" id="countdownSec">
+    <div class="frame">
+      <div class="oval">
+        <img src="assets/photo.jpg" alt="Nicole and Hanes" onerror="this.remove()">
+        <div class="ph" aria-hidden="true">N &amp; H<small>ADD assets/photo.jpg</small></div>
+      </div>
+    </div>
+    <p class="eyebrow">We’re getting married in…</p>
+    <div class="cdwrap" id="countdown" aria-live="off">
+      <div class="cd"><b id="cdD">00</b><span>Days</span></div><i>:</i>
+      <div class="cd"><b id="cdH">00</b><span>Hours</span></div><i>:</i>
+      <div class="cd"><b id="cdM">00</b><span>Minutes</span></div><i>:</i>
+      <div class="cd"><b id="cdS">00</b><span>Seconds</span></div>
+    </div>
+  </section>
+
+  <!-- VENUES -->
+  <section class="sec light" id="venues" style="padding-top:20px">
+    <h2 class="display">Venues</h2>
+
+    <div class="vcard">
+      <h3>The Ceremony</h3>
+      <div class="ill">
+        <img src="assets/ceremony.jpg" alt="Sketch of Capilla de Sta. Rita de Cascia" onerror="this.remove()">
+        <svg viewBox="0 0 200 110" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true">
+          <path d="M10 100H190"/><rect x="62" y="52" width="100" height="48"/><path d="M54 54L112 24L170 54"/>
+          <path d="M112 24V8M106 14H118"/><path d="M100 100V80Q112 64 124 80V100"/>
+          <rect x="24" y="42" width="32" height="58"/><path d="M24 42L40 26L56 42"/><path d="M40 26V14M35 19H45"/>
+          <path d="M34 66V58Q40 52 46 58V66Z"/><path d="M72 76V70Q78 64 84 70V76Z"/><path d="M140 76V70Q146 64 152 70V76Z"/>
+        </svg>
+      </div>
+      <p><b data-cfg="ceremonyName" style="font-family:var(--display);font-weight:500;letter-spacing:.06em;text-transform:uppercase">Capilla de Sta. Rita de Cascia</b></p>
+      <p class="addr" data-cfg="ceremonyAddress">San Jose del Monte, Bulacan</p>
+      <p class="scan">Scan to locate</p>
+      <div class="qr" id="qrCeremony" data-url="https://maps.app.goo.gl/MbW8D1U3Pui7ymQH8"><svg viewBox="-3 -3 35 35" shape-rendering="crispEdges" role="img" aria-label="QR code for the ceremony location"><rect x="-3" y="-3" width="35" height="35" fill="#fff"/><path fill="#35201A" d="M0 0h1v1h-1zM1 0h1v1h-1zM2 0h1v1h-1zM3 0h1v1h-1zM4 0h1v1h-1zM5 0h1v1h-1zM6 0h1v1h-1zM8 0h1v1h-1zM11 0h1v1h-1zM12 0h1v1h-1zM18 0h1v1h-1zM22 0h1v1h-1zM23 0h1v1h-1zM24 0h1v1h-1zM25 0h1v1h-1zM26 0h1v1h-1zM27 0h1v1h-1zM28 0h1v1h-1zM0 1h1v1h-1zM6 1h1v1h-1zM9 1h1v1h-1zM11 1h1v1h-1zM12 1h1v1h-1zM16 1h1v1h-1zM18 1h1v1h-1zM20 1h1v1h-1zM22 1h1v1h-1zM28 1h1v1h-1zM0 2h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM6 2h1v1h-1zM8 2h1v1h-1zM9 2h1v1h-1zM10 2h1v1h-1zM13 2h1v1h-1zM17 2h1v1h-1zM18 2h1v1h-1zM22 2h1v1h-1zM24 2h1v1h-1zM25 2h1v1h-1zM26 2h1v1h-1zM28 2h1v1h-1zM0 3h1v1h-1zM2 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM6 3h1v1h-1zM10 3h1v1h-1zM12 3h1v1h-1zM13 3h1v1h-1zM14 3h1v1h-1zM16 3h1v1h-1zM17 3h1v1h-1zM22 3h1v1h-1zM24 3h1v1h-1zM25 3h1v1h-1zM26 3h1v1h-1zM28 3h1v1h-1zM0 4h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM6 4h1v1h-1zM9 4h1v1h-1zM12 4h1v1h-1zM14 4h1v1h-1zM16 4h1v1h-1zM18 4h1v1h-1zM22 4h1v1h-1zM24 4h1v1h-1zM25 4h1v1h-1zM26 4h1v1h-1zM28 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM10 5h1v1h-1zM12 5h1v1h-1zM14 5h1v1h-1zM16 5h1v1h-1zM17 5h1v1h-1zM18 5h1v1h-1zM22 5h1v1h-1zM28 5h1v1h-1zM0 6h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM23 6h1v1h-1zM24 6h1v1h-1zM25 6h1v1h-1zM26 6h1v1h-1zM27 6h1v1h-1zM28 6h1v1h-1zM11 7h1v1h-1zM12 7h1v1h-1zM14 7h1v1h-1zM18 7h1v1h-1zM19 7h1v1h-1zM20 7h1v1h-1zM0 8h1v1h-1zM2 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM9 8h1v1h-1zM11 8h1v1h-1zM13 8h1v1h-1zM16 8h1v1h-1zM17 8h1v1h-1zM20 8h1v1h-1zM23 8h1v1h-1zM26 8h1v1h-1zM28 8h1v1h-1zM0 9h1v1h-1zM1 9h1v1h-1zM4 9h1v1h-1zM5 9h1v1h-1zM7 9h1v1h-1zM8 9h1v1h-1zM11 9h1v1h-1zM12 9h1v1h-1zM14 9h1v1h-1zM15 9h1v1h-1zM16 9h1v1h-1zM17 9h1v1h-1zM19 9h1v1h-1zM22 9h1v1h-1zM27 9h1v1h-1zM28 9h1v1h-1zM0 10h1v1h-1zM1 10h1v1h-1zM3 10h1v1h-1zM4 10h1v1h-1zM6 10h1v1h-1zM7 10h1v1h-1zM9 10h1v1h-1zM10 10h1v1h-1zM13 10h1v1h-1zM14 10h1v1h-1zM15 10h1v1h-1zM17 10h1v1h-1zM19 10h1v1h-1zM25 10h1v1h-1zM26 10h1v1h-1zM28 10h1v1h-1zM1 11h1v1h-1zM4 11h1v1h-1zM5 11h1v1h-1zM7 11h1v1h-1zM9 11h1v1h-1zM10 11h1v1h-1zM11 11h1v1h-1zM14 11h1v1h-1zM16 11h1v1h-1zM18 11h1v1h-1zM19 11h1v1h-1zM20 11h1v1h-1zM22 11h1v1h-1zM25 11h1v1h-1zM0 12h1v1h-1zM1 12h1v1h-1zM4 12h1v1h-1zM6 12h1v1h-1zM7 12h1v1h-1zM8 12h1v1h-1zM10 12h1v1h-1zM12 12h1v1h-1zM13 12h1v1h-1zM15 12h1v1h-1zM20 12h1v1h-1zM22 12h1v1h-1zM28 12h1v1h-1zM2 13h1v1h-1zM7 13h1v1h-1zM8 13h1v1h-1zM9 13h1v1h-1zM12 13h1v1h-1zM13 13h1v1h-1zM15 13h1v1h-1zM16 13h1v1h-1zM19 13h1v1h-1zM20 13h1v1h-1zM22 13h1v1h-1zM23 13h1v1h-1zM27 13h1v1h-1zM28 13h1v1h-1zM0 14h1v1h-1zM1 14h1v1h-1zM2 14h1v1h-1zM3 14h1v1h-1zM4 14h1v1h-1zM6 14h1v1h-1zM7 14h1v1h-1zM8 14h1v1h-1zM9 14h1v1h-1zM11 14h1v1h-1zM12 14h1v1h-1zM13 14h1v1h-1zM14 14h1v1h-1zM15 14h1v1h-1zM16 14h1v1h-1zM18 14h1v1h-1zM19 14h1v1h-1zM21 14h1v1h-1zM22 14h1v1h-1zM23 14h1v1h-1zM24 14h1v1h-1zM28 14h1v1h-1zM0 15h1v1h-1zM1 15h1v1h-1zM3 15h1v1h-1zM7 15h1v1h-1zM9 15h1v1h-1zM11 15h1v1h-1zM19 15h1v1h-1zM20 15h1v1h-1zM21 15h1v1h-1zM6 16h1v1h-1zM7 16h1v1h-1zM10 16h1v1h-1zM14 16h1v1h-1zM15 16h1v1h-1zM17 16h1v1h-1zM20 16h1v1h-1zM22 16h1v1h-1zM28 16h1v1h-1zM1 17h1v1h-1zM3 17h1v1h-1zM7 17h1v1h-1zM8 17h1v1h-1zM9 17h1v1h-1zM11 17h1v1h-1zM13 17h1v1h-1zM14 17h1v1h-1zM16 17h1v1h-1zM18 17h1v1h-1zM19 17h1v1h-1zM20 17h1v1h-1zM21 17h1v1h-1zM22 17h1v1h-1zM23 17h1v1h-1zM26 17h1v1h-1zM27 17h1v1h-1zM28 17h1v1h-1zM0 18h1v1h-1zM1 18h1v1h-1zM2 18h1v1h-1zM6 18h1v1h-1zM7 18h1v1h-1zM10 18h1v1h-1zM12 18h1v1h-1zM13 18h1v1h-1zM14 18h1v1h-1zM15 18h1v1h-1zM19 18h1v1h-1zM21 18h1v1h-1zM22 18h1v1h-1zM24 18h1v1h-1zM25 18h1v1h-1zM28 18h1v1h-1zM4 19h1v1h-1zM11 19h1v1h-1zM15 19h1v1h-1zM18 19h1v1h-1zM19 19h1v1h-1zM20 19h1v1h-1zM0 20h1v1h-1zM1 20h1v1h-1zM2 20h1v1h-1zM5 20h1v1h-1zM6 20h1v1h-1zM12 20h1v1h-1zM13 20h1v1h-1zM14 20h1v1h-1zM15 20h1v1h-1zM18 20h1v1h-1zM19 20h1v1h-1zM20 20h1v1h-1zM21 20h1v1h-1zM22 20h1v1h-1zM23 20h1v1h-1zM24 20h1v1h-1zM25 20h1v1h-1zM27 20h1v1h-1zM8 21h1v1h-1zM9 21h1v1h-1zM12 21h1v1h-1zM13 21h1v1h-1zM15 21h1v1h-1zM17 21h1v1h-1zM18 21h1v1h-1zM20 21h1v1h-1zM24 21h1v1h-1zM25 21h1v1h-1zM26 21h1v1h-1zM28 21h1v1h-1zM0 22h1v1h-1zM1 22h1v1h-1zM2 22h1v1h-1zM3 22h1v1h-1zM4 22h1v1h-1zM5 22h1v1h-1zM6 22h1v1h-1zM8 22h1v1h-1zM9 22h1v1h-1zM12 22h1v1h-1zM15 22h1v1h-1zM17 22h1v1h-1zM18 22h1v1h-1zM20 22h1v1h-1zM22 22h1v1h-1zM24 22h1v1h-1zM28 22h1v1h-1zM0 23h1v1h-1zM6 23h1v1h-1zM10 23h1v1h-1zM11 23h1v1h-1zM13 23h1v1h-1zM16 23h1v1h-1zM19 23h1v1h-1zM20 23h1v1h-1zM24 23h1v1h-1zM27 23h1v1h-1zM0 24h1v1h-1zM2 24h1v1h-1zM3 24h1v1h-1zM4 24h1v1h-1zM6 24h1v1h-1zM11 24h1v1h-1zM12 24h1v1h-1zM13 24h1v1h-1zM15 24h1v1h-1zM17 24h1v1h-1zM19 24h1v1h-1zM20 24h1v1h-1zM21 24h1v1h-1zM22 24h1v1h-1zM23 24h1v1h-1zM24 24h1v1h-1zM25 24h1v1h-1zM27 24h1v1h-1zM0 25h1v1h-1zM2 25h1v1h-1zM3 25h1v1h-1zM4 25h1v1h-1zM6 25h1v1h-1zM11 25h1v1h-1zM16 25h1v1h-1zM20 25h1v1h-1zM21 25h1v1h-1zM24 25h1v1h-1zM25 25h1v1h-1zM26 25h1v1h-1zM28 25h1v1h-1zM0 26h1v1h-1zM2 26h1v1h-1zM3 26h1v1h-1zM4 26h1v1h-1zM6 26h1v1h-1zM8 26h1v1h-1zM9 26h1v1h-1zM14 26h1v1h-1zM15 26h1v1h-1zM17 26h1v1h-1zM24 26h1v1h-1zM27 26h1v1h-1zM28 26h1v1h-1zM0 27h1v1h-1zM6 27h1v1h-1zM12 27h1v1h-1zM20 27h1v1h-1zM23 27h1v1h-1zM25 27h1v1h-1zM0 28h1v1h-1zM1 28h1v1h-1zM2 28h1v1h-1zM3 28h1v1h-1zM4 28h1v1h-1zM5 28h1v1h-1zM6 28h1v1h-1zM8 28h1v1h-1zM9 28h1v1h-1zM10 28h1v1h-1zM13 28h1v1h-1zM14 28h1v1h-1zM15 28h1v1h-1zM18 28h1v1h-1zM19 28h1v1h-1zM20 28h1v1h-1zM21 28h1v1h-1zM22 28h1v1h-1zM25 28h1v1h-1zM28 28h1v1h-1z"/></svg></div>
+      <a class="btn ghost" id="mapCeremony" href="#" target="_blank" rel="noopener">Open in Google Maps</a>
+    </div>
+
+    <div class="vcard">
+      <h3>The Reception</h3>
+      <div class="ill">
+        <img src="assets/reception.jpg" alt="Catalina Events Place Rental logo" onerror="this.remove()">
+        <svg viewBox="0 0 200 110" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true">
+          <path d="M8 100H192"/><rect x="52" y="54" width="96" height="46"/><path d="M44 56L100 26L156 56"/>
+          <path d="M72 62V100M88 62V100M112 62V100M128 62V100"/><path d="M92 100V84Q100 74 108 84V100"/>
+          <rect x="18" y="72" width="34" height="28"/><rect x="148" y="72" width="34" height="28"/>
+          <path d="M26 80H44M26 88H44M156 80H174M156 88H174"/><path d="M100 26V14"/>
+        </svg>
+      </div>
+      <p><b data-cfg="receptionName" style="font-family:var(--display);font-weight:500;letter-spacing:.06em;text-transform:uppercase">Catalina Events Place Rental</b></p>
+      <p class="addr" data-cfg="receptionAddress">San Jose del Monte, Bulacan</p>
+      <p class="scan">Scan to locate</p>
+      <div class="qr" id="qrReception" data-url="https://maps.app.goo.gl/7eY4jj8LQwDornxM8"><svg viewBox="-3 -3 35 35" shape-rendering="crispEdges" role="img" aria-label="QR code for the reception location"><rect x="-3" y="-3" width="35" height="35" fill="#fff"/><path fill="#35201A" d="M0 0h1v1h-1zM1 0h1v1h-1zM2 0h1v1h-1zM3 0h1v1h-1zM4 0h1v1h-1zM5 0h1v1h-1zM6 0h1v1h-1zM9 0h1v1h-1zM10 0h1v1h-1zM12 0h1v1h-1zM15 0h1v1h-1zM17 0h1v1h-1zM18 0h1v1h-1zM19 0h1v1h-1zM22 0h1v1h-1zM23 0h1v1h-1zM24 0h1v1h-1zM25 0h1v1h-1zM26 0h1v1h-1zM27 0h1v1h-1zM28 0h1v1h-1zM0 1h1v1h-1zM6 1h1v1h-1zM8 1h1v1h-1zM11 1h1v1h-1zM12 1h1v1h-1zM15 1h1v1h-1zM16 1h1v1h-1zM17 1h1v1h-1zM18 1h1v1h-1zM19 1h1v1h-1zM20 1h1v1h-1zM22 1h1v1h-1zM28 1h1v1h-1zM0 2h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM6 2h1v1h-1zM9 2h1v1h-1zM12 2h1v1h-1zM14 2h1v1h-1zM15 2h1v1h-1zM18 2h1v1h-1zM19 2h1v1h-1zM22 2h1v1h-1zM24 2h1v1h-1zM25 2h1v1h-1zM26 2h1v1h-1zM28 2h1v1h-1zM0 3h1v1h-1zM2 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM6 3h1v1h-1zM9 3h1v1h-1zM11 3h1v1h-1zM14 3h1v1h-1zM19 3h1v1h-1zM22 3h1v1h-1zM24 3h1v1h-1zM25 3h1v1h-1zM26 3h1v1h-1zM28 3h1v1h-1zM0 4h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM6 4h1v1h-1zM8 4h1v1h-1zM10 4h1v1h-1zM11 4h1v1h-1zM13 4h1v1h-1zM14 4h1v1h-1zM15 4h1v1h-1zM17 4h1v1h-1zM18 4h1v1h-1zM19 4h1v1h-1zM22 4h1v1h-1zM24 4h1v1h-1zM25 4h1v1h-1zM26 4h1v1h-1zM28 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM9 5h1v1h-1zM11 5h1v1h-1zM14 5h1v1h-1zM15 5h1v1h-1zM18 5h1v1h-1zM19 5h1v1h-1zM22 5h1v1h-1zM28 5h1v1h-1zM0 6h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM23 6h1v1h-1zM24 6h1v1h-1zM25 6h1v1h-1zM26 6h1v1h-1zM27 6h1v1h-1zM28 6h1v1h-1zM12 7h1v1h-1zM13 7h1v1h-1zM15 7h1v1h-1zM16 7h1v1h-1zM17 7h1v1h-1zM18 7h1v1h-1zM20 7h1v1h-1zM0 8h1v1h-1zM2 8h1v1h-1zM4 8h1v1h-1zM6 8h1v1h-1zM10 8h1v1h-1zM13 8h1v1h-1zM16 8h1v1h-1zM17 8h1v1h-1zM18 8h1v1h-1zM19 8h1v1h-1zM20 8h1v1h-1zM24 8h1v1h-1zM27 8h1v1h-1zM3 9h1v1h-1zM7 9h1v1h-1zM12 9h1v1h-1zM14 9h1v1h-1zM15 9h1v1h-1zM16 9h1v1h-1zM17 9h1v1h-1zM18 9h1v1h-1zM21 9h1v1h-1zM22 9h1v1h-1zM23 9h1v1h-1zM25 9h1v1h-1zM28 9h1v1h-1zM0 10h1v1h-1zM1 10h1v1h-1zM3 10h1v1h-1zM4 10h1v1h-1zM6 10h1v1h-1zM7 10h1v1h-1zM8 10h1v1h-1zM14 10h1v1h-1zM17 10h1v1h-1zM21 10h1v1h-1zM23 10h1v1h-1zM26 10h1v1h-1zM27 10h1v1h-1zM28 10h1v1h-1zM0 11h1v1h-1zM2 11h1v1h-1zM5 11h1v1h-1zM8 11h1v1h-1zM11 11h1v1h-1zM13 11h1v1h-1zM16 11h1v1h-1zM17 11h1v1h-1zM18 11h1v1h-1zM20 11h1v1h-1zM21 11h1v1h-1zM22 11h1v1h-1zM23 11h1v1h-1zM27 11h1v1h-1zM0 12h1v1h-1zM1 12h1v1h-1zM2 12h1v1h-1zM3 12h1v1h-1zM4 12h1v1h-1zM5 12h1v1h-1zM6 12h1v1h-1zM11 12h1v1h-1zM17 12h1v1h-1zM19 12h1v1h-1zM20 12h1v1h-1zM21 12h1v1h-1zM22 12h1v1h-1zM23 12h1v1h-1zM25 12h1v1h-1zM27 12h1v1h-1zM28 12h1v1h-1zM3 13h1v1h-1zM4 13h1v1h-1zM9 13h1v1h-1zM11 13h1v1h-1zM16 13h1v1h-1zM17 13h1v1h-1zM20 13h1v1h-1zM21 13h1v1h-1zM22 13h1v1h-1zM25 13h1v1h-1zM28 13h1v1h-1zM2 14h1v1h-1zM6 14h1v1h-1zM11 14h1v1h-1zM22 14h1v1h-1zM24 14h1v1h-1zM25 14h1v1h-1zM27 14h1v1h-1zM28 14h1v1h-1zM1 15h1v1h-1zM4 15h1v1h-1zM5 15h1v1h-1zM8 15h1v1h-1zM12 15h1v1h-1zM13 15h1v1h-1zM14 15h1v1h-1zM15 15h1v1h-1zM17 15h1v1h-1zM18 15h1v1h-1zM20 15h1v1h-1zM23 15h1v1h-1zM25 15h1v1h-1zM27 15h1v1h-1zM1 16h1v1h-1zM4 16h1v1h-1zM5 16h1v1h-1zM6 16h1v1h-1zM8 16h1v1h-1zM10 16h1v1h-1zM11 16h1v1h-1zM12 16h1v1h-1zM13 16h1v1h-1zM14 16h1v1h-1zM19 16h1v1h-1zM20 16h1v1h-1zM21 16h1v1h-1zM22 16h1v1h-1zM23 16h1v1h-1zM25 16h1v1h-1zM27 16h1v1h-1zM28 16h1v1h-1zM1 17h1v1h-1zM2 17h1v1h-1zM4 17h1v1h-1zM7 17h1v1h-1zM10 17h1v1h-1zM14 17h1v1h-1zM15 17h1v1h-1zM16 17h1v1h-1zM18 17h1v1h-1zM20 17h1v1h-1zM22 17h1v1h-1zM25 17h1v1h-1zM26 17h1v1h-1zM28 17h1v1h-1zM0 18h1v1h-1zM5 18h1v1h-1zM6 18h1v1h-1zM12 18h1v1h-1zM14 18h1v1h-1zM16 18h1v1h-1zM18 18h1v1h-1zM22 18h1v1h-1zM23 18h1v1h-1zM24 18h1v1h-1zM27 18h1v1h-1zM28 18h1v1h-1zM1 19h1v1h-1zM2 19h1v1h-1zM5 19h1v1h-1zM7 19h1v1h-1zM8 19h1v1h-1zM9 19h1v1h-1zM11 19h1v1h-1zM12 19h1v1h-1zM13 19h1v1h-1zM15 19h1v1h-1zM16 19h1v1h-1zM17 19h1v1h-1zM18 19h1v1h-1zM20 19h1v1h-1zM21 19h1v1h-1zM23 19h1v1h-1zM25 19h1v1h-1zM27 19h1v1h-1zM0 20h1v1h-1zM3 20h1v1h-1zM5 20h1v1h-1zM6 20h1v1h-1zM7 20h1v1h-1zM10 20h1v1h-1zM11 20h1v1h-1zM14 20h1v1h-1zM15 20h1v1h-1zM16 20h1v1h-1zM17 20h1v1h-1zM18 20h1v1h-1zM20 20h1v1h-1zM21 20h1v1h-1zM22 20h1v1h-1zM23 20h1v1h-1zM24 20h1v1h-1zM8 21h1v1h-1zM10 21h1v1h-1zM15 21h1v1h-1zM16 21h1v1h-1zM17 21h1v1h-1zM18 21h1v1h-1zM19 21h1v1h-1zM20 21h1v1h-1zM24 21h1v1h-1zM26 21h1v1h-1zM27 21h1v1h-1zM28 21h1v1h-1zM0 22h1v1h-1zM1 22h1v1h-1zM2 22h1v1h-1zM3 22h1v1h-1zM4 22h1v1h-1zM5 22h1v1h-1zM6 22h1v1h-1zM10 22h1v1h-1zM13 22h1v1h-1zM16 22h1v1h-1zM19 22h1v1h-1zM20 22h1v1h-1zM22 22h1v1h-1zM24 22h1v1h-1zM25 22h1v1h-1zM27 22h1v1h-1zM28 22h1v1h-1zM0 23h1v1h-1zM6 23h1v1h-1zM9 23h1v1h-1zM10 23h1v1h-1zM11 23h1v1h-1zM12 23h1v1h-1zM15 23h1v1h-1zM17 23h1v1h-1zM20 23h1v1h-1zM24 23h1v1h-1zM25 23h1v1h-1zM0 24h1v1h-1zM2 24h1v1h-1zM3 24h1v1h-1zM4 24h1v1h-1zM6 24h1v1h-1zM8 24h1v1h-1zM10 24h1v1h-1zM12 24h1v1h-1zM15 24h1v1h-1zM17 24h1v1h-1zM20 24h1v1h-1zM21 24h1v1h-1zM22 24h1v1h-1zM23 24h1v1h-1zM24 24h1v1h-1zM0 25h1v1h-1zM2 25h1v1h-1zM3 25h1v1h-1zM4 25h1v1h-1zM6 25h1v1h-1zM9 25h1v1h-1zM13 25h1v1h-1zM19 25h1v1h-1zM20 25h1v1h-1zM23 25h1v1h-1zM24 25h1v1h-1zM26 25h1v1h-1zM27 25h1v1h-1zM28 25h1v1h-1zM0 26h1v1h-1zM2 26h1v1h-1zM3 26h1v1h-1zM4 26h1v1h-1zM6 26h1v1h-1zM8 26h1v1h-1zM9 26h1v1h-1zM14 26h1v1h-1zM16 26h1v1h-1zM17 26h1v1h-1zM18 26h1v1h-1zM19 26h1v1h-1zM21 26h1v1h-1zM23 26h1v1h-1zM24 26h1v1h-1zM25 26h1v1h-1zM28 26h1v1h-1zM0 27h1v1h-1zM6 27h1v1h-1zM9 27h1v1h-1zM10 27h1v1h-1zM11 27h1v1h-1zM12 27h1v1h-1zM17 27h1v1h-1zM19 27h1v1h-1zM20 27h1v1h-1zM21 27h1v1h-1zM27 27h1v1h-1zM0 28h1v1h-1zM1 28h1v1h-1zM2 28h1v1h-1zM3 28h1v1h-1zM4 28h1v1h-1zM5 28h1v1h-1zM6 28h1v1h-1zM8 28h1v1h-1zM12 28h1v1h-1zM15 28h1v1h-1zM16 28h1v1h-1zM17 28h1v1h-1zM20 28h1v1h-1zM22 28h1v1h-1zM23 28h1v1h-1zM27 28h1v1h-1zM28 28h1v1h-1z"/></svg></div>
+      <a class="btn ghost" id="mapReception" href="#" target="_blank" rel="noopener">Open in Google Maps</a>
+    </div>
+  </section>
+
+  <!-- GIFT GUIDE -->
+  <section class="sec dark gift" id="gift">
+    <svg class="env-ill" viewBox="0 0 200 150" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true">
+      <g transform="rotate(-5 100 60)">
+        <rect x="52" y="10" width="96" height="86" fill="#FBF6EA" stroke="none"/>
+        <ellipse cx="100" cy="46" rx="15" ry="19" stroke="#452C1F"/>
+        <text x="100" y="50" text-anchor="middle" font-size="11" fill="#452C1F" stroke="none" style="font-family:var(--display)">N&amp;H</text>
+      </g>
+      <path d="M14 64L100 118 186 64V140H14Z" fill="currentColor"/>
+      <path d="M14 64L100 118 186 64" stroke="#E6D8BD"/>
+      <path d="M14 140L78 96M186 140L122 96" stroke="#E6D8BD" opacity=".5"/>
+    </svg>
+    <h2 class="display">Gift<br>guide</h2>
+    <div class="rule"></div>
+    <p>Your presence at our wedding is the greatest gift we could ask for. If you wish to honor us further, a <b>monetary gift</b> would be greatly appreciated as we begin our new life together.</p>
+    <p>Your generosity will help us build our future, and we are truly grateful for your love and support on this special day.</p>
+  </section>
+
+  <!-- ATTIRE GUIDE (edit the wording and colors to match your wedding) -->
+  <section class="sec light att" id="attire">
+    <h2 class="display">Attire<br>guide</h2>
+
+    <h3>Principal Sponsors</h3>
+    <p><b>Ladies</b> in old rose or dusty pink Filipiniana floor-length gown</p>
+    <p><b>Gentlemen</b> in classic Barong Tagalog paired with black slacks</p>
+    <div class="figs" data-fig="sponsors"><img src="assets/attire-sponsors.png" alt="" onerror="this.remove()"></div>
+    <div class="sw"><span style="background:#B4777F"></span><span style="background:#D9A3A6"></span><span style="background:#F0CFCF"></span><span style="background:#222"></span><span style="background:#CFC6B8"></span></div>
+
+    <h3>Entourage</h3>
+    <p><b>Ladies</b> in a floor-length gown in shades of sage green, emerald, or forest green</p>
+    <p><b>Gentlemen</b> in classic Barong Tagalog paired with black slacks</p>
+    <div class="figs" data-fig="entourage"><img src="assets/attire-entourage.png" alt="" onerror="this.remove()"></div>
+    <div class="sw"><span style="background:#1D3A2C"></span><span style="background:#5E8B6E"></span><span style="background:#9AA57A"></span><span style="background:#222"></span><span style="background:#D6D1C4"></span></div>
+
+    <h3>Wedding Guests</h3>
+    <p><b>Formal or semi-formal</b></p>
+    <p><b>Ladies</b> in a blouse and slacks or a maxi dress</p>
+    <p><b>Gentlemen</b> in classic Barong Tagalog, or a long or short-sleeved collared polo with black or beige slacks</p>
+    <div class="figs" data-fig="guests"><img src="assets/attire-guests.png" alt="" onerror="this.remove()"></div>
+    <div class="sw"><span style="background:#1D3A2C"></span><span style="background:#8C9A6A"></span><span style="background:#E3C9A0"></span><span style="background:#8A5A3B"></span><span style="background:#222"></span><span style="background:#CFC6B8"></span></div>
+
+    <p class="avoid">Please <b>refrain</b> from wearing casual clothes, denim pants, slippers, sneakers, and casual shoes. <b>Avoid</b> heavy prints, neon, ivory white, or white-colored attire.</p>
+  </section>
+
+  <!-- FAQs (the answers about plus ones, kids, photos and program time are samples. Edit to match your plans) -->
+  <section class="sec dark faq" id="faqs">
+    <h2 class="display">FAQs</h2>
+    <p class="sub">In case you’re wondering…</p>
+
+    <h3>Where are the ceremony and the reception taking place?</h3>
+    <p>The ceremony will be held at <b data-cfg="ceremonyName">Capilla de Sta. Rita de Cascia</b>, followed by a reception at <b data-cfg="receptionName">Catalina Events Place Rental</b>.</p>
+
+    <h3>What time should I arrive?</h3>
+    <p>We would love for you to be comfortably seated at <span data-cfg="ceremonyName">Capilla de Sta. Rita de Cascia</span> by <b data-cfg="arrivalTime">1:00 PM</b>, as the ceremony will begin promptly at <b data-cfg="ceremonyTime">2:30 PM</b>.</p>
+    <p>We’d appreciate it if you could join us at the ceremony, not just at the reception. It’s the most important part of our wedding, and sharing that moment with you would mean so much.</p>
+
+    <h3>What happens after the ceremony?</h3>
+    <p>Feel free to head straight to the reception venue and enjoy a delightful cocktail hour at <span data-cfg="receptionName">Catalina Events Place Rental</span>.</p>
+
+    <h3>Is there a dress code?</h3>
+    <p>Yes. We kindly request our guests to arrive in <b>formal or semi-formal attire</b> to make this occasion truly special. Please see the attire guide above for colors and examples.</p>
+
+    <h3>Can we take photos and post them on social media?</h3>
+    <p>Yes! We would love for you to take photos and share them. However, please refrain from taking photos during the ceremony and do not block our official photographers.</p>
+
+    <h3>Until what time is the program?</h3>
+    <p>The reception program will wrap up around 9:00 PM, but the celebration doesn’t have to end there. Join us for an after-party with drinks, music, and dancing.</p>
+
+    <h3>Can I bring a plus one?</h3>
+    <p>Due to limited space, we are only able to accommodate guests formally invited on our wedding invitation. Please refer to the number of seats allocated for you. Thank you for understanding.</p>
+
+    <h3>Can I bring kids?</h3>
+    <p>We adore your children; however, we have decided to keep our wedding celebration adults-only. We truly appreciate your understanding and look forward to celebrating together.</p>
+
+    <h3>How can I contribute to the celebration?</h3>
+    <p>Your presence is the greatest gift we could ask for. If you wish to give more, a monetary gift would be greatly appreciated. Please message us and we will share the details.</p>
+
+    <h3>How can I RSVP?</h3>
+    <p>We’d love to hear from you! Kindly RSVP online through the form below, or contact <b data-cfg="contact1">Nicole +63 9XX XXX XXXX</b> or <b data-cfg="contact2">Hanes +63 9XX XXX XXXX</b>. We’ll be waiting for your confirmation until <b data-cfg="rsvpDeadline">December 15, 2026</b>.</p>
+
+    <h3>For additional questions, who would be the best person to contact?</h3>
+    <p>If you have any questions, please feel free to reach out to us via Facebook Messenger.</p>
+  </section>
+
+  <!-- KINDLY RSVP -->
+  <section class="sec light rsvp" id="rsvp">
+    <h2 class="display">Kindly<br>RSVP</h2>
+    <div class="rule"></div>
+    <p class="lead">We have reserved a special seat for you, and we hope to share this beautiful moment with you. Please let us know if you’ll be there as we say “I do” by confirming your attendance on or before</p>
+    <p class="deadline" style="margin-top:18px" data-cfg="rsvpDeadline">December 15, 2026</p>
+    <button class="btn" id="rsvpBtn" type="button" aria-expanded="false" aria-controls="rsvpBox">Click here to RSVP</button>
+    <p class="note" id="rsvpNote">Please fill out the form to confirm your attendance.</p>
+
+    <div id="rsvpBox" hidden>
+      <div id="gate" hidden>
+        <label for="code">Access code from your invitation</label>
+        <input id="code" type="text" autocomplete="off">
+        <button class="btn" type="button" id="codeBtn">Unlock form</button>
+        <p id="gmsg" role="status"></p>
+      </div>
+
+      <form id="rsvpForm" novalidate>
+        <label for="name">Full name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required>
+
+        <label id="attLabel">Can you attend?</label>
+        <div class="choice" role="radiogroup" aria-labelledby="attLabel">
+          <label><input type="radio" name="attending" value="Yes" required>Joyfully accepts</label>
+          <label><input type="radio" name="attending" value="No">Regretfully declines</label>
+        </div>
+
+        <div id="extra" class="hidden">
+          <label for="guests">Number of guests (including you)</label>
+          <select id="guests" name="guests"><option>1</option><option>2</option><option>3</option><option>4</option></select>
+
+        </div>
+
+        <label for="note">Message for the couple (optional)</label>
+        <textarea id="note" name="note" rows="3"></textarea>
+
+        <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
+
+        <button class="btn" type="submit" id="sendBtn">Send my RSVP</button>
+        <p id="msg" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p class="script"><span data-cfg="bride">Nicole</span> &amp; <span data-cfg="groom">Hanes</span></p>
+    <small data-cfg="dateShort">January 10, 2027</small>
+  </footer>
+</div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="config.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
