@@ -280,6 +280,7 @@ tick(); setInterval(tick, 1000);
   });
   function done(yes){
     form.querySelectorAll("input,select,textarea,button").forEach(el => el.disabled = true);
-    msg.textContent = yes ? "Thank you! We can’t wait to celebrate with you." : "Thank you for letting us know. You’ll be missed.";
+    btn.textContent = "Sent";
+    msg.textContent = yes ? "Thank you! We can’t wait to celebrate with you." : "Thank you for letting us know.";
   }
 })();
