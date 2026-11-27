@@ -280,7 +280,7 @@ tick(); setInterval(tick, 1000);
   });
   function done(yes){
     form.querySelectorAll("input,select,textarea,button").forEach(el => el.disabled = true);
-    btn.textContent = "Sent";
+    btn.textContent = "Sent";   // <-- Change "Sent" here to "Sent ✓" or "RSVP Sent"
     msg.textContent = yes ? "Thank you! We can’t wait to celebrate with you." : "Thank you for letting us know.";
   }
 })();
