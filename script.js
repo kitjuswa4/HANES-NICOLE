@@ -248,6 +248,15 @@ tick(); setInterval(tick, 1000);
   });
   form.addEventListener("change", () => extra.classList.toggle("hidden", form.attending.value !== "Yes"));
 
+  // Auto-resize the message box as the guest types
+  if (form.note) {
+    const autoResize = () => {
+      form.note.style.height = "auto";
+      form.note.style.height = form.note.scrollHeight + "px";
+    };
+    form.note.addEventListener("input", autoResize);
+  }
+  
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     msg.className = "";

@@ -240,3 +240,10 @@
     .intro-hint span{color:var(--cream);background:none}
     .rv{opacity:1;transform:none}.save .num{opacity:1}
   }
+  #rsvpForm textarea {
+  width: 100%;
+  min-height: 84px;
+  resize: none;
+  overflow-y: hidden;
+  box-sizing: border-box;
+}
