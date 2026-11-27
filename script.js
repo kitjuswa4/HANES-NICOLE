@@ -260,8 +260,7 @@ tick(); setInterval(tick, 1000);
     const yes = form.attending.value === "Yes";
     const data = {
       name: form.name.value.trim(), attending: form.attending.value,
-      guests: yes ? form.guests.value : "0", meal: yes ? form.meal.value : "",
-      diet: form.diet.value.trim(), note: form.note.value.trim()
+      guests: yes ? form.guests.value : "0", note: form.note.value.trim()
     };
     if (CONFIG.scriptUrl){                                // save to Google Sheet
       btn.disabled = true; btn.textContent = "Sending…";

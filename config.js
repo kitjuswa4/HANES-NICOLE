@@ -22,7 +22,7 @@ const CONFIG = {
   rsvpDeadline: "December 15, 2026",
   contacts: [ { name: "Nicole", phone: "+63 9XX XXX XXXX" }, { name: "Hanes", phone: "+63 9XX XXX XXXX" } ],
 
-  scriptUrl: "",                                   // your Google Apps Script Web App URL (ends in /exec)
+  scriptUrl: "https://script.google.com/macros/s/AKfycbxBcGo0zJOqXq9m2CE9_pE33AGjhcOUMJJaAIkYwwQz4uh6p-GHzVKa1jpnfU6NXWaIrA/exec",                                   // your Google Apps Script Web App URL (ends in /exec)
   fallbackEmail: "yourname@gmail.com",             // used only if scriptUrl is empty
   accessCode: ""                                   // optional: guests must type this code to see the RSVP form
 };
